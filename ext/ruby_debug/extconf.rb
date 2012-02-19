@@ -6,6 +6,8 @@ if RUBY_VERSION < "1.9"
   exit(1)
 end
 
+$INCFLAGS << " -I#{ENV['MY_RUBY_HOME']}/include/ruby-1.9.1/ruby-#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+
 hdrs = proc {
   iseqs = %w[vm_core.h iseq.h]
   begin
